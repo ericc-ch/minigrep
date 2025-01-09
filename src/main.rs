@@ -5,9 +5,7 @@ use std::{
 
 fn main() {
     let args = parse_args(env::args());
-    let config = parse_config(&args);
-
-Config::new(args)
+    let config = Config::new(&args);
 
     let file_content = fs::read_to_string(config.file_path).expect("File cannot be read!");
 
